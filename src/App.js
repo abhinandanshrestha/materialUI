@@ -2,11 +2,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Notes from './Pages/Notes';
 import Create from './Pages/Create';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-import { purple } from '@material-ui/core/colors';
+import Layout from './components/Layout';
+
 
 const theme = createMuiTheme({
   palette:{
-    primary: purple
+    primary: {
+      main: '#f50057',
+    },
   },
   typography:{
     fontFamily: 'Quicksand',
@@ -21,13 +24,15 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Switch>
+        <Layout>
+          <Switch>
 
-          <Route exact path="/"> <Notes /> </Route>
+            <Route exact path="/"> <Notes /> </Route>
 
-          <Route exact path="/create"> <Create />  </Route>
+            <Route exact path="/create"> <Create />  </Route>
 
-        </Switch>
+          </Switch>
+        </Layout>
       </Router>
     </ThemeProvider>
   );
