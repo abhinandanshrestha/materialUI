@@ -8,8 +8,9 @@ import Layout from './components/Layout';
 const theme = createMuiTheme({
   palette:{
     primary: {
-      main: '#f50057',
+      main: '#A9FBA3',
     },
+    type: 'dark'
   },
   typography:{
     fontFamily: 'Quicksand',

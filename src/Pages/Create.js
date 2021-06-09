@@ -15,20 +15,27 @@ const useStyles = makeStyles({
     btn: {
         fontSize: 16,
         color: 'white',
-        background:'linear-gradient(45deg, #f50057  30%, #ff9100  90%)',
+        background:'linear-gradient(45deg, #48BF92  30%, #A9FBA3  90%)',
         '&:hover': {
-            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-        }
+            boxShadow: '0 3px 5px 2px #A9FBA3',
+        },
     },
     title:{
         textDecoration: 'none',
         marginBottom:20,
-        marginTop: 30
+        marginTop: 30,
+        color: '#A9FBA3'
     },
     field: {
         marginTop: 20,
         marginBottom: 20,
-    }
+        color: 'white',
+    },
+    radio: {
+        '&$checked': {
+          color: '#4B8DF8'
+        }
+    },
 })
 
 const Create = () => {
@@ -94,6 +101,9 @@ const Create = () => {
                     fullWidth 
                     required
                     error={ titleError }
+                    InputProps={{
+                        className: classes.input,
+                    }}
                 />
 
                 <TextField 
@@ -106,15 +116,18 @@ const Create = () => {
                     fullWidth 
                     required
                     error={ detailError }
+                    InputProps={{
+                        className: classes.input,
+                    }}
                 />
 
             <FormControl class={classes.field}>
                 <FormLabel>Note Category</FormLabel>
                 <RadioGroup value={category} onChange={(e)=>setCategory(e.target.value)}>
-                    <FormControlLabel control={<Radio />} label="Money" value="money" />
-                    <FormControlLabel control={<Radio />} label="Todos" value="todos" />
-                    <FormControlLabel control={<Radio />} label="Reminders" value="reminders" />
-                    <FormControlLabel control={<Radio />} label="Work" value="work" />
+                    <FormControlLabel control={<Radio color="" />} label="Money" value="money" />
+                    <FormControlLabel control={<Radio color="#A9FBA3"/>} label="Todos" value="todos" />
+                    <FormControlLabel control={<Radio color="#A9FBA3"/>} label="Reminders" value="reminders" />
+                    <FormControlLabel control={<Radio color="#A9FBA3"/>} label="Work" value="work" />
                 </RadioGroup>
             </FormControl>
 

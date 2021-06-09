@@ -22,6 +22,13 @@ const useStyles = makeStyles({
         }
         return blue[500]
       }
+    },
+    darkcard:{
+      color:'white',
+      backgroundColor: '#191919'
+    },
+    cardtext:{
+      color: 'white'
     }
 })
 
@@ -31,7 +38,9 @@ export default function NoteCard({ note, handleDelete }) {
 
   return (
     <div>
-      <Card elevation={1}>
+      <Card elevation={1}
+        className={classes.darkcard}
+      >
         <CardHeader
         avatar={
           <Avatar className={classes.avatar}>
@@ -47,7 +56,8 @@ export default function NoteCard({ note, handleDelete }) {
           subheader={note.category}
         />
         <CardContent>
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary"
+          className={classes.cardtext}>
             { note.details }
           </Typography>
         </CardContent>

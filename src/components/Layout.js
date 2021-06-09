@@ -7,6 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons';
 import { useHistory, useLocation } from 'react-router';
 import {format} from 'date-fns';
+import { grey } from '@material-ui/core/colors';
 
 const drawerWidth=240
 
@@ -14,29 +15,32 @@ const useStyles = makeStyles((theme) => {
 
     return{
         root:{
-            display: 'flex',
+            display: 'flex'
         },
         page: {
-            background: '#f9f9f9',
+            background: '#0C0E0C',
             width: '100%',
-            padding: theme.spacing(3)
+            padding: theme.spacing(3),
+            height: '100vh'
         },
         drawer:{
             width: drawerWidth
         },
         drawerPaper:{
-            width: drawerWidth
+            width: drawerWidth,
+            backgroundColor: '#191919',
+            color: 'white'
         },
         active:{
-            background: '#f4f4f4'
+            background: '#0C0E0C'
         },
         title:{
-            padding: theme.spacing(2)
+            padding: theme.spacing(2),
         },
         appbar:{
             width: `calc(100% - ${drawerWidth}px)`,
-            color: 'inherit',
-            backgroundColor: 'white'
+            color: 'white',
+            backgroundColor: '#191919'
         },
         toolbar: theme.mixins.toolbar,
         date:{
@@ -80,7 +84,7 @@ const Layout = ({children}) => {
             >
                 <Toolbar>
                     <Typography className={classes.date}>
-                       Today is the { format(new Date(),'do MMMM Y')}
+                       { format(new Date(),'do MMMM Y')}
                     </Typography>
                     <Typography>
                     Mario</Typography> 
@@ -100,7 +104,7 @@ const Layout = ({children}) => {
                     <Typography 
                     variant="h5"
                     className={classes.title}>
-                        Ninja Notes
+                        Abhinandan
                     </Typography>
                 </div>
                 
